@@ -41,8 +41,8 @@ img {
 }
 
 .container {
-  max-width: 1332px;
-  padding: 0 16px;
+  max-width: 1400px;
+  padding: 0 50px;
   margin: 0 auto;
 }
 
@@ -57,10 +57,10 @@ img {
 }
 
 .header__container {
-  max-width: 1392px;
+  max-width: 1352px;
   backdrop-filter: blur(60px);
   background: rgba(108, 185, 171, 0.7);
-  padding: 12px 46px;
+  padding: 12px 26px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -74,6 +74,13 @@ img {
   align-items: center;
   gap: 50px;
 }
+
+.header__btn-group {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
 .header__cart-link {
   padding: 10px 4px 3px;
   width: 28px;
@@ -87,6 +94,19 @@ img {
   text-align: center;
 }
 
+.header__cart-link {
+  display: inline-block;
+}
+
+.burger {
+  display: none;
+  background-color: transparent;
+  padding: 0;
+  margin: 0;
+  border: none;
+  font-size: 0;
+}
+
 .promo {
   background-color: #6cb9ab;
   color: #fff;
@@ -97,6 +117,7 @@ img {
   background-image: url("../img/cofe-bg.png");
   background-position: right 113px bottom 0;
   background-repeat: no-repeat;
+  background-size: 229px 361px;
 }
 
 .promo__title {
@@ -135,18 +156,14 @@ img {
 
 .product {
   min-height: 600px;
-
+  height: 100%;
   display: flex;
   flex-direction: column;
 
   background-color: #f2f9f7;
   color: #1d1c1d;
   font-size: 0;
-}
-
-.product__img {
-  width: 100%;
-  margin-bottom: 16px;
+  border-radius: 6px;
 }
 
 .product__content {
@@ -186,9 +203,7 @@ img {
   grid-template-columns: repeat(2, max-content);
   justify-content: space-between;
 }
-.footer__logo-link {
-  margin-bottom: 38px;
-}
+
 .footer__nav {
   margin-bottom: 80px;
 }
@@ -211,8 +226,18 @@ img {
 .footer__developer {
   margin-bottom: 3px;
 }
+.footer__developer:last-child {
+  margin-bottom: 0;
+}
+
+.footer__menu-link {
+  color: #fff;
+  text-decoration: none;
+  font-size: 20px;
+}
 .footer__email {
   display: inline-block;
+  margin-top: 0;
   margin-bottom: 16px;
 }
 .footer__social {
@@ -222,4 +247,212 @@ img {
 }
 .footer__social-item {
   font-size: 0;
+}
+
+@media (max-width: 1300px) {
+  .container {
+    padding: 0 42px;
+  }
+
+  .header {
+    padding: 0 20px;
+    top: 20px;
+  }
+
+  .header__container {
+    padding: 12px 22px;
+  }
+
+  .promo__container {
+    padding: 172px 0 60px;
+    background-image: url("../img/cofe-bg-1024.png");
+    background-position: right 48px bottom 0;
+  }
+
+  .promo__title {
+    max-width: 620px;
+    margin-bottom: 40px;
+    font-size: 70px;
+  }
+
+  .product {
+    min-height: 450px;
+  }
+
+  .footer__menu {
+    gap: 32px;
+  }
+}
+
+@media (max-width: 940px) {
+  .header__logo {
+    width: 78px;
+  }
+
+  .header__container {
+    padding: 8px 22px;
+  }
+
+  .header__menu {
+    gap: 24px;
+  }
+
+  .header__menu-link {
+    font-size: 16px;
+  }
+
+  .promo__container {
+    padding: 157px 0 60px;
+    background-position: right 0 bottom 0;
+    background-size: 203px 320px;
+  }
+
+  .promo__title {
+    max-width: 460px;
+    font-size: 54px;
+  }
+
+  .promo__link {
+    padding: 12px 18px;
+    font-size: 16px;
+  }
+
+  .products {
+    padding: 80px 0;
+  }
+
+  .products__title {
+    margin-bottom: 24px;
+    font-size: 36px;
+  }
+
+  .products__list {
+    gap: 16px;
+    grid-template-columns: repeat(auto-fill, minmax(217px, 1fr));
+  }
+  .product {
+    min-height: 360px;
+  }
+
+  .product__title {
+    font-size: 20px;
+  }
+  .product__price {
+    font-size: 16px;
+  }
+  .footer {
+    padding: 40px 0;
+  }
+
+  .footer__menu {
+    gap: 24px;
+  }
+
+  .footer__menu-link {
+    font-size: 16px;
+  }
+
+  .footer__info {
+    font-size: 12px;
+  }
+  .footer__copyright {
+    margin-bottom: 12px;
+  }
+
+  .footer__nav {
+    margin-bottom: 85px;
+  }
+
+  .footer__email {
+    margin-bottom: 12px;
+  }
+}
+
+@media (max-width: 660px) {
+  .container {
+    padding: 0 16px;
+  }
+  .header {
+    top: 0px;
+  }
+
+  .header__container {
+    padding: 8px 0px;
+  }
+
+  .header__nav {
+    display: none;
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  .header__menu {
+    padding: 50px 0;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    box-shadow: 0 4px 16px 0 rgba(4, 62, 51, 0.4);
+    background-color: #6cb9ab;
+  }
+  .burger {
+    display: inline-block;
+  }
+
+  .promo__title {
+    max-width: 100%;
+    font-size: 40px;
+    margin-bottom: 24px;
+  }
+  .promo__container {
+    padding: 90px 0 250px;
+    background-position: right 50% bottom 0;
+    background-size: 145px 229px;
+  }
+
+  .products {
+    padding: 60px 0;
+  }
+  .products__list {
+    gap: 8px;
+    grid-template-columns: repeat(2, minmax(140px, 1fr));
+  }
+
+  .product__img {
+    min-height: 226px;
+    object-fit: cover;
+
+    object-position: center;
+  }
+
+  .product__content {
+    padding: 8px 16px;
+  }
+  .product__title {
+    font-size: 16px;
+  }
+
+  .footer__container {
+    grid-template-columns: 1fr;
+  }
+
+  .footer__logo {
+    margin-bottom: 40px;
+  }
+
+  .footer__nav {
+    margin-bottom: 40px;
+  }
+
+  .footer__menu {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .footer__contacts {
+    margin-top: 40px;
+  }
 }
