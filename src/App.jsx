@@ -1,20 +1,16 @@
 import Header from "./modules/Header";
 import Main from "./modules/Main";
-import Promo from "./modules/Promo";
-import ProductsList from "./modules/ProductsList";
 import Footer from "./modules/Footer";
+
+import { BrowserRouter } from "react-router-dom";
 
 function App() {
   return (
-    <>
+    <BrowserRouter>
       <Header />
-      <Main>
-        <Promo />
-        <ProductsList />
-      </Main>
-
+      <Main />
       <Footer />
-    </>
+    </BrowserRouter>
   );
 }
 

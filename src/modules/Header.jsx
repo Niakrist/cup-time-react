@@ -1,22 +1,16 @@
 import React, { useState } from "react";
-
+import { Link } from "react-router-dom";
 const Header = () => {
-  const [isBurger, setIsBurger] = useState(false);
-
-  const handleClick = () => {
-    setIsBurger((previsBurger) => !previsBurger);
-  };
-
   return (
     <header className="header">
       <div className="container header__container">
-        <a className="header__logo-link">
+        <Link to="/" className="header__logo-link">
           <img
             className="header__logo"
             src="./img/logo.svg"
             alt="Логотип Cup Time"
           />
-        </a>
+        </Link>
 
         <nav className="header__nav">
           <ul className="header__menu">
@@ -48,46 +42,20 @@ const Header = () => {
           </ul>
         </nav>
         <div className="header__btn-group">
-          <a href="cart.html" className="header__cart-link">
+          <Link to="/cart" className="header__cart-link">
             6
-          </a>
-          <button onClick={handleClick} className="burger">
-            {isBurger ? (
-              <svg
-                width="28"
-                height="28"
-                viewBox="0 0 28 28"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg">
-                <rect
-                  x="7.28174"
-                  y="7.07532"
-                  width="20"
-                  height="1"
-                  transform="rotate(45 7.28174 7.07532)"
-                  fill="#D9D9D9"
-                />
-                <rect
-                  x="6.5752"
-                  y="21.2173"
-                  width="20"
-                  height="1"
-                  transform="rotate(-45 6.5752 21.2173)"
-                  fill="#D9D9D9"
-                />
-              </svg>
-            ) : (
-              <svg
-                width="28"
-                height="29"
-                viewBox="0 0 28 29"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg">
-                <rect x="4" y="9.5" width="20" height="1" fill="#D9D9D9" />
-                <rect x="4" y="14.5" width="20" height="1" fill="#D9D9D9" />
-                <rect x="4" y="19.5" width="20" height="1" fill="#D9D9D9" />
-              </svg>
-            )}
+          </Link>
+          <button className="burger">
+            <svg
+              width="28"
+              height="29"
+              viewBox="0 0 28 29"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <rect x="4" y="9.5" width="20" height="1" fill="#D9D9D9" />
+              <rect x="4" y="14.5" width="20" height="1" fill="#D9D9D9" />
+              <rect x="4" y="19.5" width="20" height="1" fill="#D9D9D9" />
+            </svg>
           </button>
         </div>
       </div>
