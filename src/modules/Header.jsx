@@ -1,6 +1,17 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+
 const Header = () => {
+  const location = useLocation();
+
+  const getActiveClass = (category) => {
+    const currentCategory = new URLSearchParams(location.search).get(
+      "category"
+    );
+
+    return currentCategory === category ? "active" : "";
+  };
+
   return (
     <header className="header">
       <div className="container header__container">
@@ -15,29 +26,44 @@ const Header = () => {
         <nav className="header__nav">
           <ul className="header__menu">
             <li className="header__menu-item">
-              <a className="header__menu-link" href="#">
+              <Link
+                className={`header__menu-link ${getActiveClass("tea")}`}
+                to="/products?category=tea"
+              >
                 Чай
-              </a>
+              </Link>
             </li>
             <li className="header__menu-item">
-              <a className="header__menu-link" href="#">
+              <Link
+                className={`header__menu-link ${getActiveClass("coffee")}`}
+                to="/products?category=coffee"
+              >
                 Кофе
-              </a>
+              </Link>
             </li>
             <li className="header__menu-item">
-              <a className="header__menu-link" href="#">
+              <Link
+                className={`header__menu-link ${getActiveClass("teapots")}`}
+                to="/products?category=teapots"
+              >
                 Чайники
-              </a>
+              </Link>
             </li>
             <li className="header__menu-item">
-              <a className="header__menu-link" href="#">
+              <Link
+                className={`header__menu-link ${getActiveClass("cezves")}`}
+                to="/products?category=cezves"
+              >
                 Турки
-              </a>
+              </Link>
             </li>
             <li className="header__menu-item">
-              <a className="header__menu-link" href="#">
+              <Link
+                className={`header__menu-link ${getActiveClass("other")}`}
+                to="/products?category=other"
+              >
                 Прочее
-              </a>
+              </Link>
             </li>
           </ul>
         </nav>
@@ -51,7 +77,8 @@ const Header = () => {
               height="29"
               viewBox="0 0 28 29"
               fill="none"
-              xmlns="http://www.w3.org/2000/svg">
+              xmlns="http://www.w3.org/2000/svg"
+            >
               <rect x="4" y="9.5" width="20" height="1" fill="#D9D9D9" />
               <rect x="4" y="14.5" width="20" height="1" fill="#D9D9D9" />
               <rect x="4" y="19.5" width="20" height="1" fill="#D9D9D9" />
