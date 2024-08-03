@@ -45,17 +45,13 @@ const ProductModal = ({ isOpen, onRequestClose, product }) => {
 
           <div className="modal__add">
             <div className="cart-item__quantity cart-item__quantity_modal">
-              <button className="cart-item__quantity-button cart-item__quantity-button_minus">
-                -
-              </button>
+              <button className="cart-item__quantity-button cart-item__quantity-button_minus"></button>
               <input
                 className="cart-item__quantity-input"
                 type="number"
                 value="1"
               />
-              <button className="cart-item__quantity-button cart-item__quantity-button_plus">
-                +
-              </button>
+              <button className="cart-item__quantity-button cart-item__quantity-button_plus"></button>
             </div>
             <button className="modal__add-btn">Добавить</button>
           </div>

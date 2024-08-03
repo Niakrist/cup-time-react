@@ -493,10 +493,10 @@ input[type="number"] {
 
 .modal__list {
   margin-bottom: 50px;
+  font-size: 16px;
 }
 
 .modal__item {
-  font-size: 16px;
   color: #1d1c1d;
   display: flex;
   justify-content: space-between;
@@ -508,7 +508,6 @@ input[type="number"] {
 }
 
 .modal__item span {
-  font-size: 16px;
   color: #b8b8b8;
 }
 
@@ -768,6 +767,33 @@ input[type="number"] {
   .delivery__payment {
     padding: 8px 0 0;
   }
+
+  .modal {
+    max-width: 524px;
+  }
+
+  .modal__img {
+    max-width: 224px;
+  }
+
+  .modal__content {
+    padding: 24px;
+  }
+
+  .modal__price {
+    font-size: 16px;
+    margin-bottom: 31px;
+  }
+
+  .modal__list {
+    margin-bottom: 31px;
+    font-size: 12px;
+  }
+
+  .modal__add-btn {
+    padding: 12px 18px;
+    font-size: 16px;
+  }
 }
 
 @media (max-width: 660px) {
@@ -929,5 +955,29 @@ input[type="number"] {
 
   .delivery__payment-label {
     font-size: 16px;
+  }
+
+  .modal {
+    flex-direction: column;
+    max-width: 290px;
+  }
+
+  .modal__img {
+    max-width: 100%;
+  }
+  .modal__content {
+    padding: 16px;
+  }
+
+  .modal__price {
+    margin-bottom: 16px;
+  }
+
+  .modal__list {
+    margin-bottom: 16px;
+  }
+  .modal__btn {
+    top: 16px;
+    right: 16px;
   }
 }
