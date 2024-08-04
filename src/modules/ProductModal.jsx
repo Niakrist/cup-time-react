@@ -43,7 +43,7 @@ const ProductModal = ({ isOpen, onRequestClose, product }) => {
       isOpen={isOpen}
       onRequestClose={onRequestClose}
       style={customStyles}
-      contentLabel="Product modal"
+      contentLabel={product.title}
     >
       <div className="modal">
         <img
@@ -53,7 +53,7 @@ const ProductModal = ({ isOpen, onRequestClose, product }) => {
         />
         <div className="modal__content">
           <h2 className="modal__title">{product.title}</h2>
-          <p className="modal__price">{product.price} ₽</p>
+          <p className="modal__price">{product.price}&nbsp;₽</p>
           <ul className="modal__list">
             {Object.keys(product.additional).map((item) => (
               <li className="modal__item" key={item}>
