@@ -1,41 +1,31 @@
+import { Link } from "react-router-dom";
+import { useProducts } from "../context/ProdutContext";
+import { useState } from "react";
+
 const Footer = () => {
+  const { categories } = useProducts();
   return (
     <footer className="footer">
       <div className="container footer__container">
-        <a className="footer__logo-link">
+        <Link className="footer__logo-link" to="/">
           <img
             className="footer__logo"
             src="./img/logo.svg"
             alt="Логотип Cup Time"
           />
-        </a>
+        </Link>
         <div className="footer__nav">
           <ul className="footer__menu">
-            <li className="footer__menu-item">
-              <a className="footer__menu-link" href="#">
-                Чай
-              </a>
-            </li>
-            <li className="footer__menu-item">
-              <a className="footer__menu-link" href="#">
-                Кофе
-              </a>
-            </li>
-            <li className="footer__menu-item">
-              <a className="footer__menu-link" href="#">
-                Чайники
-              </a>
-            </li>
-            <li className="footer__menu-item">
-              <a className="footer__menu-link" href="#">
-                Турки
-              </a>
-            </li>
-            <li className="footer__menu-item">
-              <a className="footer__menu-link" href="#">
-                Прочее
-              </a>
-            </li>
+            {Object.entries(categories).map(([key, value]) => (
+              <li key={key} className="footer__menu-item">
+                <Link
+                  className="footer__menu-link"
+                  to={`/products?category=${key}`}
+                >
+                  {value}
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
         <div className="footer__info">
@@ -44,25 +34,25 @@ const Footer = () => {
           <ul className="footer__developers">
             <li className="footer__developer">
               Designer:
-              <a className="footer__developer-link" href="#">
+              <a className="footer__developer-link" to="#">
                 Anastasia Ilina
               </a>
             </li>
             <li className="footer__developer">
               Developer:
-              <a className="footer__developer-link" href="#">
+              <a className="footer__developer-link" to="#">
                 Anastasia Ilina
               </a>
             </li>
           </ul>
         </div>
         <div className="footer__contacts">
-          <a href="mailto:cuptime@gmail.com" className="footer__email">
+          <a to="mailto:cuptime@gmail.com" className="footer__email">
             CUPTIME@gmail.com
           </a>
           <ul className="footer__social">
             <li className="footer__social-item">
-              <a href="#" className="footer__social-link">
+              <a to="#" className="footer__social-link">
                 <svg
                   width="32"
                   height="32"
@@ -78,7 +68,7 @@ const Footer = () => {
               </a>
             </li>
             <li className="footer__social-item">
-              <a href="#" className="footer__social-link">
+              <a to="#" className="footer__social-link">
                 <svg
                   width="32"
                   height="32"
@@ -94,7 +84,7 @@ const Footer = () => {
               </a>
             </li>
             <li className="footer__social-item">
-              <a href="#" className="footer__social-link">
+              <a to="#" className="footer__social-link">
                 <svg
                   width="32"
                   height="32"
