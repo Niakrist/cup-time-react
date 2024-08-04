@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { API_URL } from "../const";
 import { useCart } from "../context/CartContext";
 
@@ -7,19 +7,19 @@ const CartItem = ({ product }) => {
 
   const [itemQuantity, setItemQuantity] = useState(product.quantity);
 
+  useEffect(() => {
+    updateQuantity(product.id, itemQuantity);
+  }, [itemQuantity]);
+
   const handleDecrement = () => {
-    if (itemQuantity > 0) {
-      const newItemQuantity = itemQuantity - 1;
-      setItemQuantity(newItemQuantity);
-      updateQuantity(product.id, itemQuantity);
+    if (itemQuantity > 1) {
+      setItemQuantity(itemQuantity - 1);
     } else {
       removeFromCart(product.id);
     }
   };
   const handleIncrement = () => {
-    const newItemQuantity = itemQuantity + 1;
-    setItemQuantity(newItemQuantity);
-    updateQuantity(product.id, itemQuantity);
+    setItemQuantity(itemQuantity + 1);
   };
   return (
     <li className="cart-item">
@@ -34,9 +34,7 @@ const CartItem = ({ product }) => {
           <button
             onClick={handleDecrement}
             className="cart-item__quantity-button cart-item__quantity-button_minus"
-          >
-            -
-          </button>
+          ></button>
           <input
             className="cart-item__quantity-input"
             type="number"
@@ -46,9 +44,7 @@ const CartItem = ({ product }) => {
           <button
             onClick={handleIncrement}
             className="cart-item__quantity-button cart-item__quantity-button_plus"
-          >
-            +
-          </button>
+          ></button>
         </div>
         <p className="cart-item__price">
           {product.price * product.quantity}&nbsp;₽

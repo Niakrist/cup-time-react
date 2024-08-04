@@ -69,7 +69,7 @@ const Header = () => {
         </nav>
         <div className="header__btn-group">
           <Link to="/cart" className="header__cart-link">
-            {cart.length}
+            {cart ? cart.length : null}
           </Link>
           <button className="burger">
             <svg
