@@ -1,4 +1,3 @@
-import React from "react";
 import { products } from "../products";
 import CartItem from "./CartItem";
 

@@ -1,4 +1,4 @@
-import React from "react";
+import { Link } from "react-router-dom";
 
 const Promo = () => {
   return (
@@ -7,9 +7,9 @@ const Promo = () => {
         <div className="promo__container">
           <h1 className="promo__title">Попробуй новый вкус Арабики</h1>
 
-          <a className="promo__link" href="#">
+          <Link className="promo__link" to="/products?category=coffee">
             Перейти к кофе
-          </a>
+          </Link>
         </div>
       </div>
     </section>

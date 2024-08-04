@@ -1,4 +1,3 @@
-import React from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 import CartPage from "../pages/cart/CartPage";
 import Home from "../pages/home/Home";

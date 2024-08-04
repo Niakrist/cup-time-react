@@ -542,11 +542,20 @@ input[type="number"] {
   background-repeat: no-repeat;
   background-image: url("./img/close-modal.svg");
   border: none;
-
   outline: none;
 }
 
 /* MODAL end */
+
+/* skeleton start */
+
+.skeleton-wrapper {
+  width: 100%;
+  height: 600px;
+  background-color: #fbfbfb;
+}
+
+/* skeleton end */
 
 @media (max-width: 1300px) {
   .container {
@@ -581,28 +590,31 @@ input[type="number"] {
   .footer__menu {
     gap: 32px;
   }
-}
 
-.cart {
-  padding: 170px 0 50px;
-}
+  .cart {
+    padding: 170px 0 50px;
+  }
 
-.cart__container {
-  grid-template-columns: 1fr 300px;
-}
+  .cart__container {
+    grid-template-columns: 1fr 300px;
+  }
 
-.cart__list {
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-}
+  .cart__list {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  }
 
-.cart-item__title {
-  white-space: initial;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  line-clamp: 2;
-  -webkit-box-orient: vertical;
-}
+  .cart-item__title {
+    white-space: initial;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
 
+  .skeleton-wrapper {
+    height: 450px;
+  }
+}
 @media (max-width: 940px) {
   .header__logo {
     width: 78px;
@@ -793,6 +805,10 @@ input[type="number"] {
   .modal__add-btn {
     padding: 12px 18px;
     font-size: 16px;
+  }
+
+  .skeleton-wrapper {
+    height: 360px;
   }
 }
 
