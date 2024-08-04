@@ -1,4 +1,13 @@
+import { useOrder } from "../context/OrderContet";
+
 const Delivery = () => {
+  const { orderDetails, updateOrderDetails } = useOrder();
+
+  const handleChange = ({ target }) => {
+    const { name, value } = target;
+    updateOrderDetails(name, value);
+  };
+
   return (
     <section className="delivery">
       <div className="container">
@@ -9,18 +18,24 @@ const Delivery = () => {
             type="text"
             name="name"
             placeholder="Имя"
+            value={orderDetails.name}
+            onChange={handleChange}
           />
           <input
             className="delivery__input"
             type="text"
             name="phone"
             placeholder="Телефон"
+            value={orderDetails.phone}
+            onChange={handleChange}
           />
           <input
             className="delivery__input delivery__input_address"
             type="text"
             name="address"
             placeholder="Адрес"
+            value={orderDetails.address}
+            onChange={handleChange}
           />
 
           <fieldset className="delivery__payment">
@@ -30,7 +45,9 @@ const Delivery = () => {
                 className="delivery__radio"
                 type="radio"
                 name="payment"
-                value="cach"
+                value="cash"
+                checked={orderDetails.payment === "cash"}
+                onChange={handleChange}
               />
               Картой
             </label>
@@ -40,7 +57,8 @@ const Delivery = () => {
                 type="radio"
                 name="payment"
                 value="card"
-                defaultChecked
+                checked={orderDetails.payment === "card"}
+                onChange={handleChange}
               />
               Наличные
             </label>

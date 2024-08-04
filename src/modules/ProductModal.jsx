@@ -56,7 +56,7 @@ const ProductModal = ({ isOpen, onRequestClose, product }) => {
           <p className="modal__price">{product.price} ₽</p>
           <ul className="modal__list">
             {Object.keys(product.additional).map((item) => (
-              <li className="modal__item" key={item[0]}>
+              <li className="modal__item" key={item}>
                 <span>{item}: </span>
                 {product.additional[item]}
               </li>

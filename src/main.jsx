@@ -5,12 +5,15 @@ import "normalize.css";
 import "./index.css";
 import { ProductProvider } from "./context/ProdutContext.jsx";
 import { CartProvider } from "./context/CartContext.jsx";
+import { OrderProvider } from "./context/OrderContet.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <CartProvider>
       <ProductProvider>
-        <App />
+        <OrderProvider>
+          <App />
+        </OrderProvider>
       </ProductProvider>
     </CartProvider>
   </React.StrictMode>

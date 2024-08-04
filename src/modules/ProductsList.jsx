@@ -5,20 +5,10 @@ import { useSearchParams } from "react-router-dom";
 import SkeletonLoader from "./SkeletonLoader";
 
 const ProductsList = () => {
-  const { products, setCategory } = useProducts();
-
-  const titles = {
-    tea: "Чай",
-    coffee: "Кофе",
-    teapots: "Чайники",
-    cezves: "Турки",
-    other: "Другое",
-  };
+  const { products, setCategory, categories } = useProducts();
 
   const [searchParams] = useSearchParams();
   const category = searchParams.get("category");
-
-  console.log("category: ", category);
 
   useEffect(() => {
     setCategory(category);
@@ -27,7 +17,7 @@ const ProductsList = () => {
   return (
     <section className="products">
       <div className="container">
-        <h2 className="products__title">{titles[category]}</h2>
+        <h2 className="products__title">{categories[category] || "Товары"}</h2>
         <ul className="products__list">
           {products.length ? (
             products.map((product) => (

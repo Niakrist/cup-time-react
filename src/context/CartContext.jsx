@@ -31,8 +31,6 @@ export const CartProvider = ({ children }) => {
       removeFromCart(productId);
     }
 
-    console.log("productId: ", productId);
-    console.log("quantity: ", quantity);
     setCart(
       cart.map((itemCart) =>
         itemCart.id === productId ? { ...itemCart, quantity } : itemCart
@@ -44,9 +42,13 @@ export const CartProvider = ({ children }) => {
     setCart(cart.filter((cartItem) => cartItem.id !== productId));
   };
 
+  const clearCart = () => {
+    setCart([]);
+  };
+
   return (
     <CartContext.Provider
-      value={{ cart, addToCart, updateQuantity, removeFromCart }}
+      value={{ cart, addToCart, updateQuantity, removeFromCart, clearCart }}
     >
       {children}
     </CartContext.Provider>
