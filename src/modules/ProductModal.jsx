@@ -21,7 +21,7 @@ const ProductModal = ({ isOpen, onRequestClose, product }) => {
   const [quantity, setQuantity] = useState(1);
   if (!product) return;
 
-  const { cart, addToCart, updateQuantity, removeFromCart } = useCart();
+  const { addToCart } = useCart();
 
   const handleDecrement = () => {
     if (quantity > 1) {
