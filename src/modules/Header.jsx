@@ -1,8 +1,9 @@
 import { Link, useLocation } from "react-router-dom";
+import { useCart } from "../context/CartContext";
 
 const Header = () => {
+  const { cart } = useCart();
   const location = useLocation();
-
   const getActiveClass = (category) => {
     const currentCategory = new URLSearchParams(location.search).get(
       "category"
@@ -68,7 +69,7 @@ const Header = () => {
         </nav>
         <div className="header__btn-group">
           <Link to="/cart" className="header__cart-link">
-            6
+            {cart.length}
           </Link>
           <button className="burger">
             <svg
