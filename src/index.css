@@ -383,11 +383,11 @@ input[type="number"] {
 }
 
 .cart-item__quantity-button_minus {
-  background-image: url("./img/minus.svg");
+  background-image: url("/img/minus.svg");
 }
 
 .cart-item__quantity-button_plus {
-  background-image: url("./img/plus.svg");
+  background-image: url("/img/plus.svg");
 }
 
 .cart-item__quantity-input {
@@ -540,7 +540,7 @@ input[type="number"] {
   background-color: transparent;
   background-position: center;
   background-repeat: no-repeat;
-  background-image: url("./img/close-modal.svg");
+  background-image: url("/img/close-modal.svg");
   border: none;
   outline: none;
 }
